@@ -27,8 +27,7 @@ elif [ "$Arch" = "x86" ];then
 	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=res ..
 	make -j$(nproc) install
 else
-	cmake -DLauncher_META_URL:STRING="https://raw.githubusercontent.com/theofficialgman/meta-multimc/master-clean/index.json" 
- -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=res ..
+	cmake -DLauncher_META_URL:STRING="https://raw.githubusercontent.com/theofficialgman/meta-multimc/master-clean/index.json" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=res ..
 	make -j$(nproc) install
 fi
 
