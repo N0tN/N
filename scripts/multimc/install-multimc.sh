@@ -3,9 +3,9 @@
 name=multimc
 
 if [ ! -z "$app" ];then
-  install_packages openjdk-17-jdk qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools zlib1g-dev cmake git
+  install_packages openjdk-18-jdk qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools zlib1g-dev cmake git
 elif [ -f /usr/bin/apt ];then
-	sudo apt -y install openjdk-17-jdk qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools zlib1g-dev cmake git
+	sudo apt -y install openjdk-18-jdk qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools zlib1g-dev cmake git
 elif [ -f /usr/bin/pacman ];then
 	sudo pacman -S  --needed jdk-openjdk qt5-base zlib cmake git
 fi
