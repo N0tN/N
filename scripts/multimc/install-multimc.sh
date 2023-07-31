@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 name=multimc
 
 if [ ! -z "$app" ];then
