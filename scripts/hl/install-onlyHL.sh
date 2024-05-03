@@ -47,7 +47,7 @@ cd ..
 
 rm -rf hl xash3d-fwgs ~/.xash3d
 
-mkdir ~/.xash3d
+mkdir -p ~/.xash3d ~/.games
 mv * ~/.xash3d
 mv ~/.xash3d/hlsdk/valve ~/.xash3d/valve
 rm -rf ~/.xash3d/hlsdk
