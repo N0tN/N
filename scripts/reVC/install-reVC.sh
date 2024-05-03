@@ -27,7 +27,7 @@ rm -rf ~/.tmp ~/.games/reVC
 mkdir ~/.tmp
 cd ~/.tmp
 
-git clone --recursive -b miami --depth=1 https://github.com/erorcun/re3
+git clone --recursive -b miami --depth=1 https://github.com/SugaryHull/re3
 cd re3
 
 premake5  --with-librw  --os=linux gmake
@@ -47,7 +47,7 @@ elif [ "$Arch" = "aarch64" ];then
 	mkdir -pv ~/.games/reVC
 	mv ../bin/linux-arm64-librw_gl3_glfw-oal/Release/reVC ~/.games/reVC
 else
-	echo "Cannot detect architecture. Tell devs, this isnt soppused to happen."
+	echo "Cannot detect architecture. Tell devs, this isnt supposed to happen."
 	exit 1
 fi
 
