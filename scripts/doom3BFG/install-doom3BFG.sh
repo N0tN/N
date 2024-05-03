@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 if [ -f /usr/bin/apt ];then
 	sudo apt-get install unrar cmake libsdl2-dev libopenal-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev
 elif [ -f /usr/bin/pacman ];then
