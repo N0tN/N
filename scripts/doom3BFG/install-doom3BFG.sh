@@ -3,7 +3,7 @@
 if [ -f /usr/bin/apt ];then
 	sudo apt-get install unrar cmake libsdl2-dev libopenal-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev
 elif [ -f /usr/bin/pacman ];then
-	sudo pacman -S  --needed sdl2 cmake openal ffmpeg unrar
+	sudo pacman -S  --needed sdl2 cmake openal unrar
 fi
 
 rm -rf ~/.tmp ~/.games/doom3BFG
