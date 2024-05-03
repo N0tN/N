@@ -2,7 +2,9 @@
 
 set -e
 
-if [ -f /usr/bin/apt ];then
+if [ -f /usr/bin/pacman ];then
+	sudo pacman -S --needed git premake cmake openal glew libsndfile mpg123 glfw-x11 unzip
+elif [ -f /usr/bin/apt ];then
 	apt-get install git cmake premake libsndfile1-dev libsndfile1 libopenal unzip libopenal-dev libglew-dev libglfw3 libglfw3-dev libsndfile1 libsndfile1-dev libmpg123 libmpg123-dev 
 
 	mkdir .tmp
@@ -19,11 +21,22 @@ if [ -f /usr/bin/apt ];then
 	sudo cp bin/release/premake5 /usr/bin
 	cd ../..
 	rm -rf .tmp
+ else
+ 	mkdir .tmp
+	cd .tmp
+	wget https://github.com/premake/premake-core/releases/download/v5.0.0-beta1/premake-5.0.0-beta1-src.zip
+	unzip premake-5.0.0-beta1-src.zip
+	cd premake-5.0.0-beta1-src
+	premake --os=linux gmake
+	make -j$(nproc)
 
-elif [ -f /usr/bin/pacman ];then
-	sudo pacman -S --needed git premake cmake openal glew libsndfile mpg123 glfw-x11 unzip
+	sudo apt remove premake
+
+	sudo cp bin/release/*.so /usr/lib
+	sudo cp bin/release/premake5 /usr/bin
+	cd ../..
+	rm -rf .tmp
 fi
-
 
 rm -rf ~/.tmp ~/.games/reVC
 mkdir ~/.tmp
